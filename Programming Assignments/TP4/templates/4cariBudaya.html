@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>BudayaKB Lite</title>
+</head>
+
+<body>
+	{% include 'includes/_navbar.html' %}
+	<h2>Kriteria Pencarian</h2>
+	<form method="POST", action="">
+		<select name = 'stats'>
+			<option value='nbudaya'>Nama Budaya</option>
+			<option value='tipe'>Tipe Budaya</option>
+			<option value='prov'>Asal Provinsi Budaya</option>
+		</select>
+		<input type="text" name=nama required>
+		<p><input type="submit" value="Cari"></p>
+	</form>
+
+		{% if result == [] %}
+		<h3>Data yang anda cari tidak ditemukan</h3>
+		{% elif stats == 'nbudaya' %}
+			<h3>Ditemukan {{result|length}} data dengan Nama Budaya : <i>{{ nama }}</i></h3>
+		{% elif stats == 'tipe' %}
+			<h3>Ditemukan {{result|length}} data dengan Tipe Budaya : <i>{{ nama }}</i></h3>
+		{% elif stats == 'prov' %}
+			<h3>Ditemukan {{result|length}} data dengan Asal Provinsi Budaya: 
+				<i>{{ nama }}</i></h3>
+		{% endif %}
+	
+	{% if result %}
+	<table border=1>
+        <tr>
+        	<th>No</th>
+            <th>Budaya</th>
+            <th>Tipe</th>
+			<th>Asal Daerah</th>
+			<th>Link</th>
+        </tr>
+        
+        {% for v in result %}
+        <tr>
+        	<td align=center> {{ loop.index }} </td>
+           	<td align=center> {{ v.nama }} </td>
+            <td align=left> {{ v.tipe }} </td>
+			<td align=center> {{ v.prov }} </td>
+			<td align=center> {{ v.url }} </td>
+        </tr>
+        {% endfor %}
+
+	 </table>
+	{% endif %}
+
+
+
+
+</body>
+</html>

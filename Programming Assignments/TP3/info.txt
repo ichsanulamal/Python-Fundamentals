@@ -1,0 +1,46 @@
+Program ini merupakan sistem manajemen knowledge base (KB) sederhana untuk warisan budaya Indonesia, 
+yang berbasiskan Command-Line Interface (CLI). Anda bisa mengimpor, mengekspor, mencari data budaya,
+menambahkan, menyunting, menghapus data budaya, dan menampilkan statistik data budaya.
+Input yang anda lakukan bersifat sensitive, artinya 'IMPOR' berbeda dengan 'impor'
+
+DAFTAR PERINTAH:
+MENGIMPOR DAN MENGEKSPOR DATA BUDAYA
+* impor data dari csv 
+>IMPOR namaberkas.csv 
+
+* ekspor data ke csv 
+>EKSPOR namaberkas.csv 
+
+Mencari data budaya 
+* mencari data berdasarkan $nama, akan mencetak row yang labelnya tepat sama dengan $nama  
+Apabila $nama = * maka tampilkan semua row 
+>CARINAMA $nama 
+
+* mencari data berdasarkan $tipe, akan mencetak semua row yang tipenya tepat sama dengan $tipe 
+>CARITIPE $tipe 
+
+# mencari data berdasarkan $prov, akan mencetak semua row yang provinsinya tepat sama dengan $prov 
+>CARIPROV $prov
+
+MENAMBAHKAN, MENYUNTING, DAN MENGHAPUS DATA BUDAYA
+* menambahkan data budaya 
+>TAMBAH nama;;;tipe;;;provinsi;;;referenceurl 
+
+* update data budaya # tipe, provinsi, dan referenceurl
+yang lama akan diganti/ditimpa dengan yang baru 
+>UPDATE nama;;;tipe;;;provinsi;;;referenceurl 
+
+* menghapus data budaya 
+>HAPUS nama 
+
+MENAMPILKAN STATISTIK DATA BUDAYA 
+* menampilkan jumlah total warisan budaya 
+>STAT 
+
+* menampilkan jumlah warisan budaya per tipe # yang diurutkan dari terbanyak ke tersedikit 
+>STATTIPE 
+
+* menampilkan jumlah warisan budaya per provinsi # yang diurutkan dari terbanyak ke tersedikit 
+>STATPROV 
+
+ 

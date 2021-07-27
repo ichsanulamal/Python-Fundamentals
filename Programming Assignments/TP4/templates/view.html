@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title> Fields</title>
+    </head>
+
+    <!-- get flashed messages -->
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <h1> {{ message }} </h1>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <body>
+        <h1>Show off Fields</h1>
+        <form method=post action="">
+            Let's look at some fields
+            <br>
+            Enter some text
+            {{ template_form.text_field }}
+            <br>
+            Enter a floating point value 
+            {{ template_form.float_field }}
+            <br>
+            Select a button
+            {{ template_form.radio_field }}
+            <br>
+            Select a field
+            {{ template_form.select_field }}
+            <br>
+            Agree to do calculation?
+            {{ template_form.boolean_field }}
+            <br>
+            {% if result != None %}
+            {{ result }}
+            {% endif %} 39 
+            <br>
+            <input type=submit value=calculate>
+        </form>
+    </body>
+</html>

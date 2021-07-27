@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>BudayaKB Lite</title>
+</head>
+
+<body>
+	{% include 'includes/_navbar.html' %}
+	<h2>Hapus Budaya</h2>
+     
+	<p>Masukkan nama budaya yang akan dihapus</p>
+	<form action="" method ="POST">
+	<table>
+        <tr>
+            <td>Nama:</td>
+			<td><input type="text" name="hapus" required></td>
+		</tr>
+		<tr>
+            <td></td>
+			<td><p align="right"><input type="submit" value="Hapus Data"></p></td>
+		</tr>
+	</table> 
+	</form>
+
+	{% if hasil == 1 %}
+		<h3>Sukses menghapus data "{{ budaya }}"</h3>
+	{% elif hasil == 0 %}
+		<h3>Data dengan nama "{{budaya}}" tidak ada dalam sistem</h3>
+	{% endif %}
+
+</body>
+</html>
+	

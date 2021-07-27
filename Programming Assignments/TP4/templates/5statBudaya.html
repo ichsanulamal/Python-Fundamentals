@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>Stat</title>
+</head>
+
+<body>
+	 {% include 'includes/_navbar.html' %}
+	<h2>Cari Budaya</h2>
+     
+
+	<form method="POST", action="">
+		<select name = 'stats'>
+			<option value='stat'>All</option>
+			<option value='stattipe'>Tipe Budaya</option>
+			<option value='statprov'>Asal Provinsi Budaya</option>
+		</select>
+		<p><input type="submit" value="Tampilkan"></p>
+	</form>
+	<p></p>
+	
+	{% if stats == 'stat' %}
+		<h3>Budaya KB memiliki total {{nama}} data budaya</h3>
+
+	{% elif stats == 'stattipe' %}
+		<h3>Statistik Data Budaya berdasarkan Tipe Budaya</h3>
+		<table border=1>
+			<tr>
+				<th><b>Kriteria</b></th>
+				<th><b>Jumlah</b></th>
+			</tr>
+			{% for tipe, counter in nama.items() %}
+			<tr>
+				<td>{{tipe}}</td>
+				<td>{{counter}}</td>
+			</tr>
+			{% endfor %}
+
+	{% elif stats == 'statprov' %}
+		<h3>Statistik Data Budaya berdasarkan Asal Provinsi Budaya</h3>
+		<table border=1>
+			<tr>
+				<th><b>Kriteria</b></th>
+				<th><b>Jumlah</b></th>
+			</tr>
+			{% for prov, counter in nama.items() %}
+			<tr>
+				<td>{{prov}}</td>
+				<td>{{counter}}</td>
+			</tr>
+			{% endfor %}
+	{% endif %}	
+		</table>
+		
+	
+				
+			
+            
+
+</body>
+</html>
+		
+	
+		
+			

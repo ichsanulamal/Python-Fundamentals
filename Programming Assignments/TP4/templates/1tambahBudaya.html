@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title>BudayaKB Lite</title>
+</head>
+
+<body>
+	{% include 'includes/_navbar.html' %}
+	<h2>Tambah Budaya</h2>
+    <p>Masukkan data budaya yang akan ditambahkan ke dalam sistem</p> 
+    <form method="POST", action = ""> 
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:<input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>Tipe:</td>
+                <td>:<input type="text" name="tipe" required></td>
+            </tr>
+            <tr>
+                <td>Provinsi</td>
+                <td>:<input type="text" name="prov" required></td>
+            </tr>
+            <tr>
+                <td>URL referensi</td>
+                <td>:<input type="text" name="url" required></td>
+            </tr>
+                <td></td>
+                <td><p align="right"><input type = "submit" value = "Tambah Data"></p></td>
+            </tr>      
+        </table>     
+    </form> 
+	
+
+	{% if result == 1 %}
+		<h3><b>Sukses menambahkan data "{{nama}}"</b></h3>
+	{% elif result == 0 %}
+        <h3><b>Data dengan nama "{{nama}}" sudah ada</b></h3>
+    {% elif result == 2%}
+        <h3><b>Tidak ada data yang ditambahkan</b></h3>
+	{% endif %}
+</body>
+</html>
